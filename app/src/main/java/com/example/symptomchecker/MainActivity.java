@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -46,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.nav_home:
-                        Log.i("ok","ok");
+
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.nav_login:
-                        Log.i("ok1","ok");
+                        Intent familyIntent = new Intent(MainActivity.this, Login.class);
+                        startActivity(familyIntent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
