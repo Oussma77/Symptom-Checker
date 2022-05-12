@@ -10,14 +10,18 @@ import android.widget.Button;
 public class MainAdmin extends AppCompatActivity {
 
     Button addDoctor;
+    Button addHospital;
+    Button addPharmacy;
+    Button addIllness;
+    Button addMesdicine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_admin);
 
+        //Add Doctor
         addDoctor = (Button) findViewById(R.id.add_doctor);
-
         addDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,6 +29,17 @@ public class MainAdmin extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
         });
+
+        //Add hospital
+        addHospital = (Button) findViewById(R.id.add_hospital);
+        addHospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent1 = new Intent(MainAdmin.this, HospitalActivity.class);
+                startActivity(numbersIntent1);
+            }
+        });
+
 
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".HospitalEditorActivity">
+
+    <!-- Overview category -->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/hospital" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="Add hospital"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:padding="4dp"
+            android:orientation="vertical">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_hospital_name"
+                android:hint="name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+            <!-- Work time field -->
+            <EditText
+                android:id="@+id/edit_hospital_workTime"
+                android:hint="Work Time"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+            <!-- phone field -->
+            <EditText
+                android:id="@+id/edit_hospital_phone"
+                android:hint="Phone"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+            <!-- Address field -->
+            <EditText
+                android:id="@+id/edit_hospital_address"
+                android:hint="Address"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

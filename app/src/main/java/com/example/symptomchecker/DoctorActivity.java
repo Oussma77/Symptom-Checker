@@ -45,10 +45,10 @@ public class DoctorActivity extends AppCompatActivity implements LoaderManager.L
         });
 
         // Find the ListView which will be populated with the doctor data
-        ListView doctorListView = (ListView) findViewById(R.id.list);
+        ListView doctorListView = (ListView) findViewById(R.id.list_doctor);
 
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
-        View emptyView = findViewById(R.id.empty_view);
+        View emptyView = findViewById(R.id.empty_view_doctor);
         doctorListView.setEmptyView(emptyView);
 
         // Setup an Adapter to create a list item for each row of doctor data in the Cursor.

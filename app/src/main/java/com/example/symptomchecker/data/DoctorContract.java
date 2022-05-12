@@ -8,7 +8,7 @@ public class DoctorContract {
 
     private DoctorContract(){}
 
-    public static final String CONTENT_AUTHORITY = "com.example.android.symptomchecker";
+    public static final String CONTENT_AUTHORITY = "com.example.android.symptomchecker.data.DoctorProvider";
 
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 

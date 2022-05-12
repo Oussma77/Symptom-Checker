@@ -33,19 +33,27 @@
         />
 
     <Button
-        android:id="@+id/a"
+        android:id="@+id/add_pharmacy"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add ......"
+        android:text="Add Pharmacy *"
         />
 
     <Button
-        android:id="@+id/a1"
+        android:id="@+id/add_illness"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add ........."
+        android:text="Add illness *"
+        />
+
+    <Button
+        android:id="@+id/add_medicine"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add medicine *"
         />
 
 </LinearLayout>
