@@ -10,18 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
-            android:name=".DoctorActivity"
+            android:name=".DoctorEditorActivity"
             android:exported="false" />
         <activity
-            android:name=".doctor.DoctorActivity"
+            android:name=".DoctorActivity"
             android:exported="false" />
         <activity
             android:name=".MainAdmin"
             android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
         <activity
             android:name=".Login"
             android:exported="false" />
@@ -34,6 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".data.DoctorProvider"
+            android:authorities="com.example.android.symptomchecker"
+            android:exported="false" />
+
     </application>
 
 </manifest>

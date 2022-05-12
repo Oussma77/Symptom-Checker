@@ -13,5 +13,28 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+    <!-- Title for the activity to add a new doctor [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_doctor">Add a Doctor</string>
+
+    <!-- Title for the activity to edit an existing doctor [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_edit_doctor">Edit Doctor</string>
+
+
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
+
+    <string name="delete_dialog_msg">Delete this Doctor?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="editor_delete_doctor_successful">Doctor deleted</string>
+    <string name="editor_delete_doctor_failed">Error with deleting Doctor</string>
+
+    <string name="editor_insert_doctor_successful">Pet saved</string>
+    <string name="editor_insert_doctor_failed">Error with saving pet</string>
+
+    <string name="editor_update_doctor_successful">Doctor updated</string>
+    <string name="editor_update_doctor_failed">Error with updating Doctor</string>
 
 </resources>
