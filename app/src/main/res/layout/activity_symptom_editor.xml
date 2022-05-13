@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SymptomEditorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Overview category -->
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/baseline_medication_liquid_black_24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_symptom_name"
+                style="@style/EditorFieldStyle"
+                android:hint="название"
+                android:inputType="textMultiLine" />
+            <!-- desc field -->
+            <EditText
+                android:id="@+id/edit_symptom_desc"
+                style="@style/EditorFieldStyle"
+                android:layout_height="70dp"
+                android:hint="Краткое описание симптома"
+                android:inputType="textMultiLine" />
+
+            <!-- need emergency help field -->
+            <EditText
+                android:id="@+id/edit_symptom_help"
+                style="@style/EditorFieldStyle"
+                android:layout_height="120dp"
+                android:hint="Нужна ли экстренная помощь"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/edit_symptom_classification"
+                style="@style/EditorFieldStyle"
+                android:layout_height="120dp"
+                android:hint="Классификация"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/edit_symptom_isnrecommended"
+                style="@style/EditorFieldStyle"
+                android:layout_height="120dp"
+                android:hint="Что рекомендуется делать"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/edit_symptom_isnotrecommended"
+                style="@style/EditorFieldStyle"
+                android:layout_height="120dp"
+                android:hint="Что не рекомендуется делать"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/edit_symptom_reasons"
+                style="@style/EditorFieldStyle"
+                android:layout_height="120dp"
+                android:hint="Возможные причины"
+                android:inputType="textMultiLine" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

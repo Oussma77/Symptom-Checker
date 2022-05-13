@@ -8,6 +8,7 @@
     android:background="@color/MainBackround"
     android:padding="16dp"
     android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".MainAdmin">
 
 
@@ -18,26 +19,34 @@
 
     <Button
         android:id="@+id/add_doctor"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add Doctor"
+        android:text="Добавить доктора"
         />
 
     <Button
         android:id="@+id/add_hospital"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add hospital"
+        android:text="Добавить больницу"
         />
 
     <Button
         android:id="@+id/add_pharmacy"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add Pharmacy"
+        android:text="Добавить аптеку"
+        />
+
+    <Button
+        android:id="@+id/add_symptom"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Добавить симптом"
         />
 
     <Button
@@ -45,15 +54,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add illness *"
-        />
-
-    <Button
-        android:id="@+id/add_medicine"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add medicine *"
+        android:text="Add illness  *"
         />
 
 </LinearLayout>

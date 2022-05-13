@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/MainBackround"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+            android:id="@+id/image2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/baseline_medication_black_24" />
+        <TextView
+            android:id="@+id/name_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="NAME SYMPTOM"
+            android:textSize="26dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+
+        </LinearLayout>
+<!--Desc-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Краткое описание симптома : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+
+        <TextView
+            android:id="@+id/desc_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+
+<!--        Need emerganceu help-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Нужна ли экстренная помощь : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+        <TextView
+            android:id="@+id/need_help_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+<!--        Classification-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Классификация : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+        <TextView
+            android:id="@+id/classification_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+<!--        Is Recommended-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Краткое описание симптома : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+        <TextView
+            android:id="@+id/isrecommended_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <!--        Is Not Recommended-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Что рекомендуется делать : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+        <TextView
+            android:id="@+id/isnotrecommended_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+<!--        Possible reasons-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Возможные причины : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+        <TextView
+            android:id="@+id/reasons_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </LinearLayout>
+
+</LinearLayout>

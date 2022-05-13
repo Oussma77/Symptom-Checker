@@ -12,6 +12,7 @@ public class MainAdmin extends AppCompatActivity {
     Button addDoctor;
     Button addHospital;
     Button addPharmacy;
+    Button addSymptom;
     Button addIllness;
     Button addMesdicine;
 
@@ -45,6 +46,15 @@ public class MainAdmin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent numbersIntent1 = new Intent(MainAdmin.this, PharmacyActivity.class);
+                startActivity(numbersIntent1);
+            }
+        });
+
+        addSymptom = (Button) findViewById(R.id.add_symptom);
+        addSymptom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent1 = new Intent(MainAdmin.this, SymptomActivity.class);
                 startActivity(numbersIntent1);
             }
         });

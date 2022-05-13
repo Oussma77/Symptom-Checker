@@ -14,45 +14,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
+            android:name=".SymptomActivity"
+            android:exported="false"
+            android:label="Symptom "
+            android:parentActivityName=".MainAdmin"/>
+        <activity
+            android:name=".SymptomEditorActivity"
+            android:exported="false"
+            android:label="Symptom Editor"
+            android:parentActivityName=".SymptomActivity" />
+        <activity
             android:name=".PharmacyEditorActivity"
             android:exported="false"
             android:label="Pharmacy Editor"
-            android:parentActivityName=".PharmacyActivity"/>
+            android:parentActivityName=".PharmacyActivity" />
         <activity
             android:name=".PharmacyActivity"
             android:exported="false"
             android:label="Pharmacy "
-            android:parentActivityName=".MainAdmin"/>
+            android:parentActivityName=".MainAdmin" />
         <activity
             android:name=".HospitalEditorActivity"
             android:exported="false"
             android:label="Hospital Editor"
-            android:parentActivityName=".HospitalActivity"/>
+            android:parentActivityName=".HospitalActivity" />
         <activity
             android:name=".HospitalActivity"
             android:exported="false"
             android:label="Hospital"
-            android:parentActivityName=".MainAdmin"/>
+            android:parentActivityName=".MainAdmin" />
         <activity
             android:name=".DoctorEditorActivity"
             android:exported="false"
             android:label="Doctor Editor"
-            android:parentActivityName=".DoctorActivity"/>
+            android:parentActivityName=".DoctorActivity" />
         <activity
             android:name=".DoctorActivity"
             android:exported="false"
             android:label="Doctor "
-            android:parentActivityName=".MainAdmin"/>
+            android:parentActivityName=".MainAdmin" />
         <activity
             android:name=".MainAdmin"
             android:exported="false"
             android:label="Main Admin"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Login"
             android:exported="false"
             android:label="Login"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -72,12 +82,15 @@
             android:name=".data.HospitalProvider"
             android:authorities="com.example.android.symptomchecker.data.HospitalProvider"
             android:exported="false" />
-
         <provider
             android:name=".data.PharmacyProvider"
             android:authorities="com.example.android.symptomchecker.data.PharmacyProvider"
             android:exported="false" />
 
+        <provider
+            android:name=".data.SymptomProvider"
+            android:authorities="com.example.android.symptomchecker.data.SymptomProvider"
+            android:exported="false" />
 
     </application>
 
