@@ -15,31 +15,48 @@
         android:theme="@style/Theme.SymptomChecker">
         <activity
             android:name=".PharmacyEditorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Pharmacy Editor"
+            android:parentActivityName=".PharmacyActivity"/>
         <activity
             android:name=".PharmacyActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Pharmacy "
+            android:parentActivityName=".MainAdmin"/>
         <activity
             android:name=".HospitalEditorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Hospital Editor"
+            android:parentActivityName=".HospitalActivity"/>
         <activity
             android:name=".HospitalActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Hospital"
+            android:parentActivityName=".MainAdmin"/>
         <activity
             android:name=".DoctorEditorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Doctor Editor"
+            android:parentActivityName=".DoctorActivity"/>
         <activity
             android:name=".DoctorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Doctor "
+            android:parentActivityName=".MainAdmin"/>
         <activity
             android:name=".MainAdmin"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Main Admin"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Login"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Login"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Pharmacy Editor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
