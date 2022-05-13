@@ -11,7 +11,10 @@
     <ListView
         android:id="@+id/list_hospital"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+    </ListView>
+
+
 
 
 
@@ -22,11 +25,11 @@
         android:layout_centerInParent="true">
 
         <ImageView
-            android:id="@+id/empty_shelter_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/baseline_person_add_black_48"/>
+        android:id="@+id/empty_shelter_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/hospital" />
 
         <TextView
             android:id="@+id/empty_title_text"
@@ -37,7 +40,8 @@
             android:fontFamily="sans-serif-medium"
             android:paddingTop="16dp"
             android:text="It's a hospital loneley here .."
-            android:textAppearance="?android:textAppearanceMedium"/>
+            android:textAppearance="?android:textAppearanceMedium"
+            tools:ignore="NotSibling" />
 
         <TextView
             android:id="@+id/empty_subtitle_text"
@@ -49,7 +53,7 @@
             android:paddingTop="8dp"
             android:text="Get Stared By adding a hospital"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#A2AAB0"/>
+            android:textColor="#A2AAB0" />
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
