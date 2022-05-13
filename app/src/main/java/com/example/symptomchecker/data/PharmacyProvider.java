@@ -12,15 +12,15 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.symptomchecker.data.HospitalContract.HospitalEntry;
+import com.example.symptomchecker.data.PharmacyContract.PharmacyEntry;
 
-public class HospitalProvider extends ContentProvider {
+public class PharmacyProvider extends ContentProvider {
 
     /** Tag for the log messages */
-    public static final String LOG_TAG = HospitalProvider.class.getSimpleName();
+    public static final String LOG_TAG = PharmacyProvider.class.getSimpleName();
 
-    private static final int HOSPITALS = 100;
-    private static final int HOSPITAL_ID = 101;
+    private static final int PHARMACYS = 100;
+    private static final int PHARMACY_ID = 101;
 
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
@@ -32,37 +32,35 @@ public class HospitalProvider extends ContentProvider {
 
     // Static initializer. This is run the first time anything is called from this class.
     static {
-        sUriMatcher.addURI(HospitalContract.CONTENT_AUTHORITY, HospitalContract.PATH_HOSPITALS, HOSPITALS);
+        sUriMatcher.addURI(PharmacyContract.CONTENT_AUTHORITY, PharmacyContract.PATH_PHARMACYS, PHARMACYS);
 
-        sUriMatcher.addURI(HospitalContract.CONTENT_AUTHORITY, HospitalContract.PATH_HOSPITALS + "/#", HOSPITAL_ID);
+        sUriMatcher.addURI(PharmacyContract.CONTENT_AUTHORITY, PharmacyContract.PATH_PHARMACYS + "/#", PHARMACY_ID);
     }
     //database helper object
-    private HospitalDbHelper mDBHelperHospital;
+    private PharmacyDbHelper mDBHelperPharmacy;
 
     @Override
     public boolean onCreate() {
-        mDBHelperHospital = new HospitalDbHelper(getContext());
+        mDBHelperPharmacy = new PharmacyDbHelper(getContext());
         return false;
     }
 
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] strings, @Nullable String s, @Nullable String[] strings1, @Nullable String s1) {
-        SQLiteDatabase database=mDBHelperHospital.getReadableDatabase();
+        SQLiteDatabase database=mDBHelperPharmacy.getReadableDatabase();
         Cursor cursor;
         int match = sUriMatcher.match(uri);
 
         switch (match){
-            case HOSPITALS:
-                Log.v(LOG_TAG,"Errooooooooooooooooooooooooooooooor 1");
-                cursor = database.query(HospitalEntry.TABLE_NAME_HOSPITAL,strings,s,strings1,null,null,s1);
-                Log.v(LOG_TAG,"Errooooooooooooooooooooooooooooooor 2");
+            case PHARMACYS:
+                cursor = database.query(PharmacyEntry.TABLE_NAME_PHARMACYS,strings,s,strings1,null,null,s1);
                 break;
 
-            case HOSPITAL_ID:
-                s = HospitalEntry._ID + "=?";
+            case PHARMACY_ID:
+                s = PharmacyEntry._ID + "=?";
                 strings1 = new String[]{String.valueOf(ContentUris.parseId(uri))};
-                cursor =database.query(HospitalEntry.TABLE_NAME_HOSPITAL,strings,s,strings1,null,null,s1);
+                cursor =database.query(PharmacyEntry.TABLE_NAME_PHARMACYS,strings,s,strings1,null,null,s1);
                 break;
 
             default:
@@ -80,14 +78,13 @@ public class HospitalProvider extends ContentProvider {
     public String getType(@NonNull Uri uri) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case HOSPITALS:
-                return HospitalEntry.CONTENT_LIST_TYPE;
-            case HOSPITAL_ID:
-                return HospitalEntry.CONTENT_ITEM_TYPE;
+            case PHARMACYS:
+                return PharmacyEntry.CONTENT_LIST_TYPE;
+            case PHARMACY_ID:
+                return PharmacyEntry.CONTENT_ITEM_TYPE;
             default:
                 throw new IllegalStateException("Unknown URI " + uri + " with match " + match);
         }
-
     }
 
     @Nullable
@@ -95,26 +92,26 @@ public class HospitalProvider extends ContentProvider {
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case HOSPITALS:
-                return insertHospital(uri, contentValues);
+            case PHARMACYS:
+                return insertPharmacy(uri, contentValues);
             default:
                 throw new IllegalArgumentException("Insertion is not supported for " + uri);
         }
     }
 
-    private Uri insertHospital(Uri uri, ContentValues values) {
+    private Uri insertPharmacy(Uri uri, ContentValues values) {
 
         // Check that the name is not null
-        String name = values.getAsString(HospitalEntry.COLUMN_HOSPITAL_NAME);
+        String name = values.getAsString(PharmacyEntry.COLUMN_PHARMACYS_NAME);
         if (name == null) {
-            throw new IllegalArgumentException("Hospital requires a name");
+            throw new IllegalArgumentException("Pharmacy requires a name ...");
         }
 
         // Get writeable database
-        SQLiteDatabase database = mDBHelperHospital.getWritableDatabase();
+        SQLiteDatabase database = mDBHelperPharmacy.getWritableDatabase();
 
         // Insert the new pet with the given values
-        long id = database.insert(HospitalEntry.TABLE_NAME_HOSPITAL, null, values);
+        long id = database.insert(PharmacyEntry.TABLE_NAME_PHARMACYS, null, values);
         // If the ID is -1, then the insertion failed. Log an error and return null.
         if (id == -1) {
             Log.e(LOG_TAG, "Failed to insert row for " + uri);
@@ -130,21 +127,21 @@ public class HospitalProvider extends ContentProvider {
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         // Get writeable database
-        SQLiteDatabase database = mDBHelperHospital.getWritableDatabase();
+        SQLiteDatabase database = mDBHelperPharmacy.getWritableDatabase();
         // Track the number of rows that were deleted
         int rowsDeleted;
 
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case HOSPITALS:
+            case PHARMACYS:
                 // Delete all rows that match the selection and selection args
-                rowsDeleted = database.delete(HospitalEntry.TABLE_NAME_HOSPITAL, selection, selectionArgs);
+                rowsDeleted = database.delete(PharmacyEntry.TABLE_NAME_PHARMACYS, selection, selectionArgs);
                 break;
-            case HOSPITAL_ID:
+            case PHARMACY_ID:
                 // Delete a single row given by the ID in the URI
-                selection = HospitalEntry._ID + "=?";
+                selection = PharmacyEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                rowsDeleted = database.delete(HospitalEntry.TABLE_NAME_HOSPITAL, selection, selectionArgs);
+                rowsDeleted = database.delete(PharmacyEntry.TABLE_NAME_PHARMACYS, selection, selectionArgs);
                 break;
             default:
                 throw new IllegalArgumentException("Deletion is not supported for " + uri);
@@ -162,28 +159,28 @@ public class HospitalProvider extends ContentProvider {
                       String[] selectionArgs) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case HOSPITALS:
-                return updateHospital(uri, contentValues, selection, selectionArgs);
-            case HOSPITAL_ID:
+            case PHARMACYS:
+                return updatePharmacy(uri, contentValues, selection, selectionArgs);
+            case PHARMACY_ID:
                 // For the ID code, extract out the ID from the URI,
                 // so we know which row to update. Selection will be "_id=?" and selection
                 // arguments will be a String array containing the actual ID.
-                selection = HospitalEntry._ID + "=?";
+                selection = PharmacyEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                return updateHospital(uri, contentValues, selection, selectionArgs);
+                return updatePharmacy(uri, contentValues, selection, selectionArgs);
             default:
                 throw new IllegalArgumentException("Update is not supported for " + uri);
         }
     }
 
 
-    private int updateHospital(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+    private int updatePharmacy(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         // If the {@link PetEntry#COLUMN_PET_NAME} key is present,
         // check that the name value is not null.
-        if (values.containsKey(HospitalEntry.COLUMN_HOSPITAL_NAME)) {
+        if (values.containsKey(PharmacyEntry.COLUMN_PHARMACYS_NAME)) {
 
-            if (values.getAsString(HospitalEntry.COLUMN_HOSPITAL_NAME) == null) {
-                throw new IllegalArgumentException("Hospital requires a name");
+            if (values.getAsString(PharmacyEntry.COLUMN_PHARMACYS_NAME) == null) {
+                throw new IllegalArgumentException("Pharmacy requires a name");
             }
         }
 
@@ -192,10 +189,10 @@ public class HospitalProvider extends ContentProvider {
         }
 
         // Otherwise, get writeable database to update the data
-        SQLiteDatabase database = mDBHelperHospital.getWritableDatabase();
+        SQLiteDatabase database = mDBHelperPharmacy.getWritableDatabase();
 
         // Perform the update on the database and get the number of rows affected
-        int rowsUpdated = database.update(HospitalEntry.TABLE_NAME_HOSPITAL, values, selection, selectionArgs);
+        int rowsUpdated = database.update(PharmacyEntry.TABLE_NAME_PHARMACYS, values, selection, selectionArgs);
 
         // If 1 or more rows were updated, then notify all listeners that the data at the
         // given URI has changed
@@ -206,5 +203,4 @@ public class HospitalProvider extends ContentProvider {
         return rowsUpdated;
 
     }
-
 }

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.symptomchecker">
 
-    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -13,9 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
-
-
-
+        <activity
+            android:name=".PharmacyEditorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PharmacyActivity"
+            android:exported="false" />
         <activity
             android:name=".HospitalEditorActivity"
             android:exported="false" />
@@ -48,11 +51,16 @@
             android:name=".data.DoctorProvider"
             android:authorities="com.example.android.symptomchecker.data.DoctorProvider"
             android:exported="false" />
-
         <provider
             android:name=".data.HospitalProvider"
             android:authorities="com.example.android.symptomchecker.data.HospitalProvider"
             android:exported="false" />
+
+        <provider
+            android:name=".data.PharmacyProvider"
+            android:authorities="com.example.android.symptomchecker.data.PharmacyProvider"
+            android:exported="false" />
+
 
     </application>
 

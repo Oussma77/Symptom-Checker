@@ -40,6 +40,15 @@ public class MainAdmin extends AppCompatActivity {
             }
         });
 
+        addPharmacy = (Button) findViewById(R.id.add_pharmacy);
+        addPharmacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent1 = new Intent(MainAdmin.this, PharmacyActivity.class);
+                startActivity(numbersIntent1);
+            }
+        });
+
 
     }
 }
