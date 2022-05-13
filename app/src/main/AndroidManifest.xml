@@ -15,10 +15,14 @@
         android:theme="@style/Theme.SymptomChecker">
         <activity
             android:name=".IllnessEditorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Edit Illness "
+            android:parentActivityName=".IllnessActivity"/>
         <activity
             android:name=".IllnessActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Illness "
+            android:parentActivityName=".MainAdmin" />
         <activity
             android:name=".SymptomActivity"
             android:exported="false"
