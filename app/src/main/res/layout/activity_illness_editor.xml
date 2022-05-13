@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".SymptomEditorActivity">
+    tools:context=".IllnessEditorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,59 +27,68 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Name field -->
+            <!-- Type field -->
             <EditText
-                android:id="@+id/edit_symptom_name"
+                android:id="@+id/edit_illness_name"
                 style="@style/EditorFieldStyle"
                 android:hint="название"
                 android:inputType="textMultiLine" />
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_illness_type"
+                style="@style/EditorFieldStyle"
+                android:hint="Тип болезни"
+                android:inputType="textMultiLine" />
+
             <!-- desc field -->
             <EditText
-                android:id="@+id/edit_symptom_desc"
+                android:id="@+id/edit_illness_desc"
                 style="@style/EditorFieldStyle"
-                android:layout_height="70dp"
-                android:hint="Краткое описание симптома"
+                android:layout_height="91dp"
+                android:hint="описание болезни"
                 android:inputType="textMultiLine" />
 
             <!-- need emergency help field -->
             <EditText
-                android:id="@+id/edit_symptom_help"
+                android:id="@+id/edit_illness_causes"
                 style="@style/EditorFieldStyle"
                 android:layout_height="120dp"
-                android:hint="Нужна ли экстренная помощь"
+                android:hint="Причины"
                 android:inputType="textMultiLine" />
 
             <EditText
-                android:id="@+id/edit_symptom_classification"
+                android:id="@+id/edit_illness_risk"
                 style="@style/EditorFieldStyle"
                 android:layout_height="120dp"
-                android:hint="Классификация"
+                android:hint="Кто в группе риска"
                 android:inputType="textMultiLine" />
 
             <EditText
-                android:id="@+id/edit_symptom_isnrecommended"
+                android:id="@+id/edit_illness_symptoms"
                 style="@style/EditorFieldStyle"
                 android:layout_height="120dp"
-                android:hint="Что рекомендуется делать"
+                android:hint="Симптомы"
                 android:inputType="textMultiLine" />
 
             <EditText
-                android:id="@+id/edit_symptom_isnotrecommended"
+                android:id="@+id/edit_illness_medicines"
                 style="@style/EditorFieldStyle"
                 android:layout_height="120dp"
-                android:hint="Что не рекомендуется делать"
+                android:hint="Лекарства"
                 android:inputType="textMultiLine" />
 
             <EditText
-                android:id="@+id/edit_symptom_reasons"
+                android:id="@+id/edit_illness_ask"
                 style="@style/EditorFieldStyle"
                 android:layout_height="120dp"
-                android:hint="Возможные причины"
+                android:hint="Какие вопросы нужно задать врачу"
                 android:inputType="textMultiLine" />
 
 
         </LinearLayout>
 
     </LinearLayout>
+
 
 </ScrollView>

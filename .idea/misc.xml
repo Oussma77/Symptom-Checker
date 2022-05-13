@@ -11,6 +11,8 @@
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_doctor_editor.xml" value="0.25" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_hospital.xml" value="0.25" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_hospital_editor.xml" value="0.33" />
+        <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_illness.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_illness_editor.xml" value="0.33" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_login2.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -22,6 +24,7 @@
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/header_menu.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/list_item_doctor.xml" value="0.25" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/list_item_hospital.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/list_item_illness.xml" value="0.25" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/list_item_pharmacy.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/layout/list_item_symptom.xml" value="0.25" />
         <entry key="..\:/Users/Oussama/AndroidStudioProjects/SymptomChecker/app/src/main/res/menu/main_menu.xml" value="0.25" />

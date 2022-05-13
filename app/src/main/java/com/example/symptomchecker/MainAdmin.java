@@ -59,6 +59,15 @@ public class MainAdmin extends AppCompatActivity {
             }
         });
 
+        addIllness = (Button) findViewById(R.id.add_illness);
+        addIllness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent1 = new Intent(MainAdmin.this, IllnessActivity.class);
+                startActivity(numbersIntent1);
+            }
+        });
+
 
     }
 }

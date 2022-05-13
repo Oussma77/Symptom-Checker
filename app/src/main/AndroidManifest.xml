@@ -14,10 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
+            android:name=".IllnessEditorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IllnessActivity"
+            android:exported="false" />
+        <activity
             android:name=".SymptomActivity"
             android:exported="false"
             android:label="Symptom "
-            android:parentActivityName=".MainAdmin"/>
+            android:parentActivityName=".MainAdmin" />
         <activity
             android:name=".SymptomEditorActivity"
             android:exported="false"
@@ -86,12 +92,14 @@
             android:name=".data.PharmacyProvider"
             android:authorities="com.example.android.symptomchecker.data.PharmacyProvider"
             android:exported="false" />
-
         <provider
             android:name=".data.SymptomProvider"
             android:authorities="com.example.android.symptomchecker.data.SymptomProvider"
             android:exported="false" />
-
+        <provider
+            android:name=".data.IllnessProvider"
+            android:authorities="com.example.android.symptomchecker.data.IllnessProvider"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -21,111 +21,125 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
             <ImageView
-            android:id="@+id/image2"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:src="@drawable/baseline_medication_black_24" />
-        <TextView
-            android:id="@+id/name_symptom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="NAME SYMPTOM"
-            android:textSize="26dp"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#2B3D4D" />
+                android:id="@+id/image2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/baseline_medication_black_24" />
+            <TextView
+                android:id="@+id/name_illness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="NAME ILLNES"
+                android:textSize="26dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#2B3D4D" />
 
         </LinearLayout>
-<!--Desc-->
+
+        <TextView
+            android:id="@+id/type_illness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="TYPE ILLNES"
+            android:textSize="22dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+
+        <!--Desc-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Краткое описание симптома : "
+            android:text="описание : "
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#2B3D4D" />
 
         <TextView
-            android:id="@+id/desc_symptom"
+            android:id="@+id/desc_illness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
             android:textAppearance="?android:textAppearanceMedium" />
 
 
-<!--        Need emerganceu help-->
+        <!--        Need emerganceu help-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Нужна ли экстренная помощь : "
+            android:text="Причины : "
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#2B3D4D" />
         <TextView
-            android:id="@+id/need_help_symptom"
+            android:id="@+id/causes_illness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
             android:textAppearance="?android:textAppearanceMedium" />
 
-<!--        Classification-->
+        <!--        Classification-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Классификация : "
+            android:text="Кто в группе риска : "
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#2B3D4D" />
         <TextView
-            android:id="@+id/classification_symptom"
+            android:id="@+id/risk_illness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
             android:textAppearance="?android:textAppearanceMedium" />
 
-<!--        Is Recommended-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Что рекомендуется делать : "
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#2B3D4D" />
-        <TextView
-            android:id="@+id/isrecommended_symptom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Test"
-            android:textAppearance="?android:textAppearanceMedium" />
+
         <!--        Is Not Recommended-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Что нерекомендуется делать : "
+            android:text="Симптомы : "
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#2B3D4D" />
         <TextView
-            android:id="@+id/isnotrecommended_symptom"
+            android:id="@+id/symptoms_illness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
             android:textAppearance="?android:textAppearanceMedium" />
 
-<!--        Possible reasons-->
+        <!--        Possible reasons-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Возможные причины : "
+            android:text="лекарства : "
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#2B3D4D" />
         <TextView
-            android:id="@+id/reasons_symptom"
+            android:id="@+id/medicines_illness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
             android:textAppearance="?android:textAppearanceMedium" />
+
+        <!--        Possible reasons-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Какие вопросы нужно задать врачу : "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D" />
+        <TextView
+            android:id="@+id/ask_illness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textAppearance="?android:textAppearanceMedium" />
+
 
     </LinearLayout>
 
