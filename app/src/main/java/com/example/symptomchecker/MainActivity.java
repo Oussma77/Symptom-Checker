@@ -10,12 +10,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    Button nextQuiz;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -59,6 +63,17 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 return true;
+            }
+        });
+
+
+        //Add hospital
+        nextQuiz = (Button) findViewById(R.id.nextQuiz);
+        nextQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent1 = new Intent(MainActivity.this, MainQuiz.class);
+                startActivity(numbersIntent1);
             }
         });
 

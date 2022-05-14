@@ -22,8 +22,8 @@
                 <item android:title="Share"
                     android:icon="@drawable/ic_baseline_share_24"
                     android:id="@+id/nav_s"/>
-                <item android:title="Share1"
-                    android:icon="@drawable/ic_baseline_share_24"
+                <item android:title="Rate us 5 stars"
+                    android:icon="@drawable/baseline_thumb_up_black_24"
                     android:id="@+id/nav_share1"/>
             </group>
          </menu>
@@ -31,14 +31,17 @@
     </group>
 
     <group android:checkableBehavior="single">
-        <item android:title="Login">
+        <item android:title="More">
             <menu>
                 <group>
-                    <item android:title="Share"
-                        android:icon="@drawable/ic_baseline_share_24"
+                    <item android:title="условия обслуживания"
+                        android:icon="@drawable/baseline_open_in_new_black_48"
                         />
-                    <item android:title="login"
-                        android:icon="@drawable/ic_baseline_share_24"
+                    <item android:title="политика конфиденциальности"
+                        android:icon="@drawable/baseline_contact_support_black_24"
+                        />
+                    <item android:title="источник медицины"
+                        android:icon="@drawable/baseline_medication_black_24"
                         />
                 </group>
             </menu>

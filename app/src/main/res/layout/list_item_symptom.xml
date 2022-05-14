@@ -50,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
+            android:maxLines="2"
             android:textAppearance="?android:textAppearanceMedium" />
 
 
@@ -66,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
+            android:maxLines="2"
             android:textAppearance="?android:textAppearanceMedium" />
 
 <!--        Classification-->
@@ -81,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
+            android:maxLines="2"
             android:textAppearance="?android:textAppearanceMedium" />
 
 <!--        Is Recommended-->
@@ -96,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
+            android:maxLines="2"
             android:textAppearance="?android:textAppearanceMedium" />
         <!--        Is Not Recommended-->
         <TextView
@@ -110,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
+            android:maxLines="2"
             android:textAppearance="?android:textAppearanceMedium" />
 
 <!--        Possible reasons-->
@@ -125,6 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test"
+            android:maxLines="2"
             android:textAppearance="?android:textAppearanceMedium" />
 
     </LinearLayout>

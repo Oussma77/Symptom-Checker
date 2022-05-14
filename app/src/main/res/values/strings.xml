@@ -37,5 +37,11 @@
     <string name="editor_update_doctor_successful">Update success</string>
     <string name="editor_update_doctor_failed">Error with updating ..</string>
 
+    <string name="maindetail">Сейчас Вы пройдете короткое (3 мин),
+    безопасное и анонимное обследование.
+    Ваши ответь будут тщательно
+    проанализированы, и вы узнаете о
+    возможных причинах ваших симптомов.</string>
+
 
 </resources>

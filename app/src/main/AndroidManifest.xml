@@ -14,10 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
+            android:name=".MainQuiz"
+            android:exported="false" />
+        <activity
             android:name=".IllnessEditorActivity"
             android:exported="false"
             android:label="Edit Illness "
-            android:parentActivityName=".IllnessActivity"/>
+            android:parentActivityName=".IllnessActivity" />
         <activity
             android:name=".IllnessActivity"
             android:exported="false"
