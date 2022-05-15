@@ -22,27 +22,39 @@ public class MainQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_main_quiz);
 
         linearLayout1 = (LinearLayout) findViewById(R.id.id1);
-        linearLayout1 = (LinearLayout) findViewById(R.id.id2);
+        linearLayout2 = (LinearLayout) findViewById(R.id.id2);
+
+        linearLayout1.setVisibility(View.VISIBLE);
+        linearLayout2.setVisibility(View.GONE);
 
         b1 = (Button) findViewById(R.id.next1);
         b2 = (Button) findViewById(R.id.next2);
 
+
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linearLayout1.setVisibility(View.GONE);
-                linearLayout2.setVisibility(View.VISIBLE);
+                    linearLayout1.setVisibility(View.GONE);
+                    linearLayout2.setVisibility(View.VISIBLE);
+
             }
         });
 
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linearLayout2.setVisibility(View.GONE);
                 linearLayout1.setVisibility(View.VISIBLE);
-            }
+                linearLayout2.setVisibility(View.GONE);
+
+                }
         });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }

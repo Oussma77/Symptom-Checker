@@ -7,11 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainQuiz">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            />
 
         <LinearLayout
             android:id="@+id/id1"
@@ -64,7 +71,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome here 01"
+                android:text="Welcome here 02"
                 android:textSize="26dp"
                 />
 
