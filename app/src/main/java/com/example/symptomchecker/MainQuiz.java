@@ -3,17 +3,26 @@ package com.example.symptomchecker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 
 public class MainQuiz extends AppCompatActivity {
 
-    LinearLayout linearLayout1;
+    RadioGroup radioGroupForWho;
+    RadioButton radioButtonForWho;
+    RadioButton radioButtonsemoene;
+
+    String ForWhow = "";
+
+    LinearLayout linearLayoutForWho;
     LinearLayout linearLayout2;
 
-    Button b1;
+    Button buttonForWho;
     Button b2;
 
     @Override
@@ -21,40 +30,26 @@ public class MainQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_quiz);
 
-        linearLayout1 = (LinearLayout) findViewById(R.id.id1);
-        linearLayout2 = (LinearLayout) findViewById(R.id.id2);
 
-        linearLayout1.setVisibility(View.VISIBLE);
-        linearLayout2.setVisibility(View.GONE);
+        linearLayoutForWho = (LinearLayout) findViewById(R.id.linearForWho);
+        linearLayoutForWho.setVisibility(View.VISIBLE);
+        radioGroupForWho = findViewById(R.id.radioGroupForWho);
+        buttonForWho = (Button) findViewById(R.id.buttonForWho);
 
-        b1 = (Button) findViewById(R.id.next1);
-        b2 = (Button) findViewById(R.id.next2);
-
-
-
-        b1.setOnClickListener(new View.OnClickListener() {
+        buttonForWho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    linearLayout1.setVisibility(View.GONE);
-                    linearLayout2.setVisibility(View.VISIBLE);
+                linearLayoutForWho.setVisibility(View.GONE);
+                //linearLayout2.setVisibility(View.VISIBLE);
+
+                int radioId = radioGroupForWho.getCheckedRadioButtonId();
+                radioButtonForWho = findViewById(radioId);
+                ForWhow = radioButtonForWho.getText().toString().trim();
+                Log.v("MainQuiz1" , "Radio = " + ForWhow);
 
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.GONE);
-
-                }
-        });
-
-
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
 }

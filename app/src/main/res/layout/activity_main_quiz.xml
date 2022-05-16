@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,100 +10,220 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="test"
-            />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="106dp"
+            android:text="Patient ..."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/id1"
-            android:layout_width="wrap_content"
+            android:id="@+id/linearForWho"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome here 01"
-                android:textSize="26dp"
-                />
+                android:text="Who is the checkup for?"
+                android:textSize="26dp" />
 
             <RadioGroup
+                android:id="@+id/radioGroupForWho"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
 
                 <RadioButton
-                    android:id="@+id/radio_man"
+                    android:id="@+id/radio_myself"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Man"
-                    android:textSize="16dp"/>
+                    android:checked="true"
+                    android:text="Myself"
+                    android:textSize="16dp" />
 
                 <RadioButton
-                    android:id="@+id/radio_women"
+                    android:id="@+id/radio_someone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Women"
-                    android:textSize="16dp"/>
+                    android:text="Someone else"
+                    android:textSize="16dp" />
 
             </RadioGroup>
 
             <Button
-                android:id="@+id/next1"
+                android:id="@+id/buttonForWho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next"
-                />
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:text="Next" />
 
         </LinearLayout>
 
+        <!--        02-->
         <LinearLayout
-            android:id="@+id/id2"
-            android:layout_width="wrap_content"
+            android:id="@+id/linearsex"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome here 02"
-                android:textSize="26dp"
-                />
+                android:text="What is your sex?"
+                android:textSize="26dp" />
 
             <RadioGroup
+                android:id="@+id/radioGroupsex"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
 
                 <RadioButton
-                    android:id="@+id/radio_man1"
+                    android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Man"
-                    android:textSize="16dp"/>
+                    android:checked="true"
+                    android:text="Male"
+                    android:textSize="16dp" />
 
                 <RadioButton
-                    android:id="@+id/radio_women1"
+                    android:id="@+id/radio_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Women"
-                    android:textSize="16dp"/>
+                    android:text="Female"
+                    android:textSize="16dp" />
 
             </RadioGroup>
 
             <Button
-                android:id="@+id/next2"
+                android:id="@+id/buttonsex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next"
-                />
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:text="Next" />
+
+        </LinearLayout>
+        <!--03-->
+        <LinearLayout
+            android:id="@+id/linearAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How old are you?"
+                android:textSize="26dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <EditText
+                    android:id="@+id/EditTextAge"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:hint="Age" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/buttonAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:text="Next" />
+
+        </LinearLayout>
+
+        <!--        04-->
+
+        <LinearLayout
+            android:id="@+id/linearallstatements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Please check all the statements below tha apply to you ."
+                android:textSize="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="select one answer in each row." />
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupOverweight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="i'm overweight or obese" />
+
+                <RadioButton
+                    android:id="@+id/radio_overweight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_obese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_notobese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't know"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/buttonAllStatements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:text="Next" />
 
         </LinearLayout>
 
 
+        <!--        the end -->
     </LinearLayout>
 
 
