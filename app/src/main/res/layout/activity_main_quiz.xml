@@ -128,20 +128,14 @@
                 android:text="How old are you?"
                 android:textSize="26dp" />
 
-            <RadioGroup
-                android:id="@+id/radioGroupAge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
 
                 <EditText
                     android:id="@+id/EditTextAge"
                     android:layout_width="100dp"
-                    android:inputType="number"
                     android:layout_height="match_parent"
-                    android:hint="Age" />
+                    android:hint="Age"
+                    android:inputType="number" />
 
-            </RadioGroup>
 
             <Button
                 android:id="@+id/buttonAge"
@@ -159,14 +153,15 @@
             android:id="@+id/linearallstatements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:orientation="vertical">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:text="Please check all the statements below tha apply to you ."
+                android:textColor="@color/black"
                 android:textSize="26dp" />
 
             <TextView
@@ -190,29 +185,181 @@
                     android:text="i'm overweight or obese" />
 
                 <RadioButton
-                    android:id="@+id/radio_overweight"
+                    android:id="@+id/radio_overweightyes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Yes"
+                    android:text="Да"
                     android:textSize="16dp" />
 
                 <RadioButton
-                    android:id="@+id/radio_obese"
+                    android:id="@+id/radio_overweightno"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="Нет"
                     android:textSize="16dp" />
 
                 <RadioButton
-                    android:id="@+id/radio_notobese"
+                    android:id="@+id/radio_overweightdont"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Don't know"
+                    android:text="Не знаю"
                     android:textSize="16dp" />
 
             </RadioGroup>
 
+            <!--            Cigarettes-->
+            <RadioGroup
+                android:id="@+id/radioGroupCigarettes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="I smoke Cigarettes" />
+
+                <RadioButton
+                    android:id="@+id/radio_Cigarettesyes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Да"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Cigarettesno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Нет"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Cigarettesdont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не знаю"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+            <!--            Cholesterol-->
+
+            <RadioGroup
+                android:id="@+id/radioGroupCholesterol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="I hva high Cholesterol" />
+
+                <RadioButton
+                    android:id="@+id/radio_Cholesterolyes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Да"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Cholesterolsno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Нет"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Cholesteroldont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не знаю"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+            <!--            hypertension-->
+
+            <RadioGroup
+                android:id="@+id/radioGroupHypertension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="I have high Hypertension" />
+
+                <RadioButton
+                    android:id="@+id/radio_Hypertensionyes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Да"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_HypertensionNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Нет"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Hypertensiondont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не знаю"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+            <!--            Diabetes-->
+            <RadioGroup
+                android:id="@+id/radioGroupDiabetes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="I have Diabetes" />
+
+                <RadioButton
+                    android:id="@+id/radio_Diabetesyes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Да"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_DiabetesNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Нет"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_DiabetesDont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не знаю"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+
+            <!--            end -->
             <Button
                 android:id="@+id/buttonAllStatements"
                 android:layout_width="wrap_content"
@@ -223,8 +370,53 @@
 
         </LinearLayout>
 
-
         <!--        the end -->
+
+        <!--        Add Symptoms-->
+        <LinearLayout
+            android:id="@+id/linearAddSymptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Symptoms"
+                android:textColor="@color/black"
+                android:textSize="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AddSymptomsExitText"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/EditTextSearchSymptoms"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"/>
+
+
+            <ListView
+                android:id="@+id/list_searchHospital"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ListView>
+
+            <Button
+                android:id="@+id/buttonAddSymptoms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:text="Next" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

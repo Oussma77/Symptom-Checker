@@ -32,7 +32,7 @@ public class MainQuiz extends AppCompatActivity {
 
 
         linearLayoutForWho = (LinearLayout) findViewById(R.id.linearForWho);
-        linearLayoutForWho.setVisibility(View.VISIBLE);
+//        linearLayoutForWho.setVisibility(View.VISIBLE);
         radioGroupForWho = findViewById(R.id.radioGroupForWho);
         buttonForWho = (Button) findViewById(R.id.buttonForWho);
 
