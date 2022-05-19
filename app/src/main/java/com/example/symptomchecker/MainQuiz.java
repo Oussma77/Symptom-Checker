@@ -142,8 +142,22 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
 
 
         ImageButton imageButtonHospitals = findViewById(R.id.img_btn_list_hospitals);
+        imageButtonHospitals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent numbersIntent = new Intent(MainQuiz.this, HospitalListActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
 
         ImageButton imageButtonPharmacy = findViewById(R.id.img_btn_list_pharmacy);
+        imageButtonPharmacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent numbersIntent = new Intent(MainQuiz.this, HospitalListActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
 
 
         getLoaderManager().initLoader(LOADER, null, this);
