@@ -16,17 +16,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Patient ..."
+            android:text="вопрос к пациенту (минутку)"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <!--        02-->
+        <!--    linearForWho    02-->
 
         <LinearLayout
             android:id="@+id/linearForWho"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -69,6 +69,7 @@
 
         </LinearLayout>
 
+        <!--        linearsex-->
         <LinearLayout
             android:id="@+id/linearsex"
             android:layout_width="match_parent"
@@ -114,7 +115,8 @@
                 android:text="Next" />
 
         </LinearLayout>
-        <!--03-->
+
+        <!-- linearAge 03-->
         <LinearLayout
             android:id="@+id/linearAge"
             android:layout_width="match_parent"
@@ -129,12 +131,12 @@
                 android:textSize="26dp" />
 
 
-                <EditText
-                    android:id="@+id/EditTextAge"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:hint="Age"
-                    android:inputType="number" />
+            <EditText
+                android:id="@+id/EditTextAge"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:hint="Age"
+                android:inputType="number" />
 
 
             <Button
@@ -153,8 +155,8 @@
             android:id="@+id/linearallstatements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <TextView
@@ -376,46 +378,100 @@
         <LinearLayout
             android:id="@+id/linearAddSymptoms"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Symptoms"
+                android:text="Выберите симптом"
                 android:textColor="@color/black"
                 android:textSize="26dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/AddSymptomsExitText"
+                android:text="@string/AddSymptomsExitTextRu"
                 android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/EditTextSearchSymptoms"
-                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search"/>
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Поиск" />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/list_search_Symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="278dp" />
+
+
+</RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <!--        Results are now shown-->
+
+        <LinearLayout
+            android:id="@+id/linearResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Полученные результаты"
+                android:textSize="26dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+
+                android:src="@drawable/main2"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="рекомендация"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Проконсультируйтесь с врачом"
+                android:textSize="16dp" />
 
 
             <ListView
-                android:id="@+id/list_searchHospital"
+                android:id="@+id/list_result_Symptoms"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
+                android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/buttonAddSymptoms"
+            <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="56dp"
-                android:text="Next" />
+                android:text="@string/Result_about_end"
+                android:textSize="11dp" />
+
+
+
+
 
         </LinearLayout>
+
 
     </LinearLayout>
 
