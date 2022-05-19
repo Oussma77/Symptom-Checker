@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.LoaderManager;
 import android.content.ContentUris;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -22,12 +23,16 @@ import android.widget.RadioGroup;
 import com.example.symptomchecker.data.SymptomContract;
 
 import com.example.symptomchecker.data.SymptomContract.SymptomEntry;
+import com.example.symptomchecker.data.PharmacyContract.PharmacyEntry;
+import com.example.symptomchecker.data.IllnessContracr.IllnessEntry;
+import com.example.symptomchecker.data.HospitalContract.HospitalEntry;
+import com.example.symptomchecker.data.DoctorContract.DoctorEntry;
 
 public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     //--------------------------------------for data base
     /**
-     * Identifier for the hospital data loader
+     * Identifier for the --- data loader
      */
     private static final int LOADER = 0;
     private static final int LOADER_EXIST = 1;
@@ -35,10 +40,21 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
     private Uri mSelectSymptomUri = SymptomEntry.CONTENT_URI;
     SymptomCursorAdapter mSymptomCursorAdapter;
 
+    private Uri mSelectDoctorUri = DoctorEntry.CONTENT_URI;
+    DoctorCursorAdapter mDoctorCursorAdapter;
+
+    private Uri mSelectHospitalUri = HospitalEntry.CONTENT_URI;
+    HospitalCursorAdapter mHospitalCursorAdapter;
+
+    private Uri mSelectPharmacyUri = PharmacyEntry.CONTENT_URI;
+    PharmacyCursorAdapter mPharmacyCursorAdapter;
+
+
     /**
      * Adapter for the ListView
      */
     MainQuizOneSymptomCursorAdapter mOneSymptomCursorAdapter;
+    MainQuizOneIllnessCursorAdapter mOneIllnessCursorAdapter;
 
     //-**********************************************end
 
@@ -105,17 +121,29 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
             }
         });
 
-        if (mSelectSymptomUri != null) {
-            getLoaderManager().initLoader(LOADER, null, this);
-        }
 
-        //result
 
-        // Find the ListView which will be populated with the Pharmacy data
+        //result // Find the ListView which will be populated with the Pharmacy data
         ListView resultSymptomListView = (ListView) findViewById(R.id.list_result_Symptoms);
 
         mSymptomCursorAdapter = new SymptomCursorAdapter(this, null);
         resultSymptomListView.setAdapter(mSymptomCursorAdapter);
+
+
+//       Список врачей в вашем районе
+        ImageButton imageButtonDoctor = findViewById(R.id.img_btn_list_doctors);
+        imageButtonDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent numbersIntent = new Intent(MainQuiz.this, DoctorListActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+
+        ImageButton imageButtonHospitals = findViewById(R.id.img_btn_list_hospitals);
+
+        ImageButton imageButtonPharmacy = findViewById(R.id.img_btn_list_pharmacy);
 
 
         getLoaderManager().initLoader(LOADER, null, this);
@@ -147,10 +175,6 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {

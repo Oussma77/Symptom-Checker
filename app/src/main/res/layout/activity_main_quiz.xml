@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -380,7 +380,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -403,18 +403,21 @@
                 android:layout_marginBottom="16dp"
                 android:hint="Поиск" />
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/list_search_Symptoms"
-        android:layout_width="match_parent"
-        android:layout_height="278dp" />
+                <ListView
+                    android:id="@+id/list_search_Symptoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp" />
 
 
-</RelativeLayout>
-
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -426,7 +429,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -438,19 +441,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
-                android:src="@drawable/main2"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="рекомендация"
-                android:textSize="16dp" />
+                android:src="@drawable/main2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:text="рекомендация"
+                android:textColor="@color/MainImg1"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Проконсультируйтесь с врачом"
+                android:textColor="@color/black"
                 android:textSize="16dp" />
 
 
@@ -459,15 +463,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
+
+            <!--            Список врачей в вашем районе-->
             <TextView
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Список врачей в вашем районе"
+                android:textColor="@color/MainImg1"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/img_btn_list_doctors"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:scaleType="centerInside"
+                android:src="@drawable/doctors1" />
+
+            <!--            Список больниц в вашем районе-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Список больниц в вашем районе"
+                android:textColor="@color/MainImg1"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/img_btn_list_hospitals"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/hospital" />
+
+            <!--            Список аптек в вашем районе-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Список аптек в вашем районе"
+                android:textColor="@color/MainImg1"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/img_btn_list_pharmacy"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:scaleType="centerInside"
+                android:src="@drawable/pahrmacy1" />
+            <!--            in the and-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="@string/Result_about_end"
                 android:textSize="11dp" />
-
-
-
 
 
         </LinearLayout>

@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
+            android:name=".DoctorListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainQuiz"
             android:exported="false" />
         <activity
