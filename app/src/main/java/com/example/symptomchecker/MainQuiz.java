@@ -154,7 +154,7 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
         imageButtonPharmacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent numbersIntent = new Intent(MainQuiz.this, HospitalListActivity.class);
+                Intent numbersIntent = new Intent(MainQuiz.this, PharmacyListActivity.class);
                 startActivity(numbersIntent);
             }
         });

@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
+            android:name=".PharmacyListActivity"
+            android:exported="false" />
+        <activity
             android:name=".HospitalListActivity"
             android:exported="false" />
         <activity
