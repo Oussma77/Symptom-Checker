@@ -16,11 +16,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginBottom="36dp"
             android:text="вопрос к пациенту (минутку)"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="36dp"
+            android:src="@drawable/stethoscope" />
 
         <!--        select illness or symptom-->
         <LinearLayout
@@ -181,12 +187,12 @@
             <EditText
                 android:id="@+id/EditTextAge"
                 android:layout_width="350dp"
-                android:maxLength="2"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
                 android:hint="Возраст"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
 
             <Button
@@ -523,12 +529,6 @@
                 android:text="Полученные результаты"
                 android:textSize="26dp" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-
-                android:src="@drawable/main2" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -543,6 +543,19 @@
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:src="@drawable/advice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ваше заболевание по предыдущим анализам:"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
 
             <ListView
                 android:id="@+id/list_result_Symptoms"
