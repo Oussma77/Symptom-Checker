@@ -10,6 +10,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -215,6 +216,7 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
 
 
         // for list symptoms
+        final wLoadingDialog wLoadingDialog = new wLoadingDialog(MainQuiz.this);
         // Find the ListView which will be populated with the hospital data
         ListView listViewOneSymptoms = (ListView) findViewById(R.id.list_search_Symptoms);
 
@@ -228,9 +230,20 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 mSelectSymptomUri = ContentUris.withAppendedId(SymptomEntry.CONTENT_URI, id);
 
+                wLoadingDialog.startLoadingDialog();
+                Handler handler= new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        wLoadingDialog.dismissDialog();
+                        linearAllstatements.setVisibility(View.GONE);
+                        linearResult.setVisibility(View.VISIBLE);
+                    }
+                },6000);
+
                 getLoaderManager().initLoader(LOADER_EXIST, null, MainQuiz.this);
-                linearAllstatements.setVisibility(View.GONE);
-                linearResult.setVisibility(View.VISIBLE);
+
+
             }
         });
 

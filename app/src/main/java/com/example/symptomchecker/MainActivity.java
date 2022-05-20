@@ -67,11 +67,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Add hospital
+        //Main Quiz
+
+        final wLoadingDialog wLoadingDialog = new wLoadingDialog(MainActivity.this);
+
         nextQuiz = (Button) findViewById(R.id.nextQuiz);
         nextQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Intent numbersIntent1 = new Intent(MainActivity.this, MainQuiz.class);
                 startActivity(numbersIntent1);
             }
