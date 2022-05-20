@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/MainBackround"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="184dp"
-        android:src="@drawable/main" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/login_admin" />
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="32dp"
-        android:ems="15"
         android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:ems="15"
         android:hint="Username"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/editTextTextpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
         android:ems="15"
         android:hint="Password"
-        android:layout_margin="20dp"
-        android:inputType="textPassword"
-        android:layout_gravity="center"
-        />
+        android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:textColor="@color/black"
+        android:id="@+id/buttonlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Login"
-        android:layout_margin="20dp"
+        android:backgroundTint="#4FB7FB"
         android:layout_gravity="center"
-        android:onClick="LoginUser"/>
-
+        android:layout_margin="20dp"
+        android:layout_marginBottom="32dp"
+        android:text="логин" />
 
 
 </LinearLayout>
