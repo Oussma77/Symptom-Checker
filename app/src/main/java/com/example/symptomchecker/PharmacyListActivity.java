@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.symptomchecker.data.HospitalContract;
 import com.example.symptomchecker.data.PharmacyContract.PharmacyEntry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,6 +25,10 @@ public class PharmacyListActivity extends AppCompatActivity implements LoaderMan
 
     /** Adapter for the ListView */
     PharmacyCursorAdapter mCursorAdapter;
+
+    private Uri mSelectPharmacyUri = PharmacyEntry.CONTENT_URI;
+    PharmacyCursorAdapter mPharmacyCursorAdapter;
+    private static final int LOADER_EXIST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,10 @@ public class PharmacyListActivity extends AppCompatActivity implements LoaderMan
         pharmacyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                mSelectPharmacyUri = ContentUris.withAppendedId(PharmacyEntry.CONTENT_URI, id);
+
+                getLoaderManager().initLoader(LOADER_EXIST, null, PharmacyListActivity.this);
 
             }
         });
@@ -62,7 +71,7 @@ public class PharmacyListActivity extends AppCompatActivity implements LoaderMan
 
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context
-                PharmacyEntry.CONTENT_URI,   // Provider content URI to query
+                mSelectPharmacyUri,   // Provider content URI to query
                 projection,             // Columns to include in the resulting Cursor
                 null,                   // No selection clause
                 null,                   // No selection arguments
@@ -72,6 +81,19 @@ public class PharmacyListActivity extends AppCompatActivity implements LoaderMan
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         mCursorAdapter.swapCursor(cursor);
+
+        if (mSelectPharmacyUri != PharmacyEntry.CONTENT_URI) {
+            int addressColumnIndex = cursor.getColumnIndex(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS);
+            String Address = cursor.getString(addressColumnIndex);
+
+            Uri gmmIntentUri = Uri.parse("geo:0,0?q="+Address+", краснодар");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+
+
+        }
+
     }
 
     @Override
