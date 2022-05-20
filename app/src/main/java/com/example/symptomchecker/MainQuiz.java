@@ -56,7 +56,7 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
      * Adapter for the ListView
      */
     MainQuizOneSymptomCursorAdapter mOneSymptomCursorAdapter;
-    MainQuizOneIllnessCursorAdapter mOneIllnessCursorAdapter;
+
 
     //-**********************************************end
     //type
@@ -248,7 +248,7 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
         });
 
 
-        //result // Find the ListView which will be populated with the Pharmacy data
+        //All list result // Find the ListView which will be populated with the Pharmacy data
         ListView resultSymptomListView = (ListView) findViewById(R.id.list_result_Symptoms);
 
         mSymptomCursorAdapter = new SymptomCursorAdapter(this, null);
