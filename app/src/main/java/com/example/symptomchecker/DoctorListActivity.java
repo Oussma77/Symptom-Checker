@@ -19,10 +19,18 @@ import com.example.symptomchecker.data.DoctorContract.DoctorEntry;
 public class DoctorListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
 
-    /** Identifier for the doctor data loader */
-    private static final int DOCTOR_LOADER = 0;
+    private Uri mSelectDoctorUri = DoctorEntry.CONTENT_URI;
+    DoctorCursorAdapter mDoctorCursorAdapter;
 
-    /** Adapter for the ListView */
+    /**
+     * Identifier for the doctor data loader
+     */
+    private static final int DOCTOR_LOADER = 0;
+    private static final int DOCTOR_LOADER_EXIST = 1;
+
+    /**
+     * Adapter for the ListView
+     */
     DoctorCursorAdapter mCursorAdapter;
 
     @Override
@@ -46,6 +54,10 @@ public class DoctorListActivity extends AppCompatActivity implements LoaderManag
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
+                mSelectDoctorUri = ContentUris.withAppendedId(DoctorEntry.CONTENT_URI, id);
+
+                getLoaderManager().initLoader(DOCTOR_LOADER_EXIST, null, DoctorListActivity.this);
+
 
             }
         });
@@ -63,11 +75,11 @@ public class DoctorListActivity extends AppCompatActivity implements LoaderManag
                 DoctorEntry.COLUMN_DOCTOR_AGE,
                 DoctorEntry.COLUMN_DOCTOR_PHONE,
                 DoctorEntry.COLUMN_DOCTOR_ADDRESS,
-                DoctorEntry.COLUMN_DOCTOR_EMAIL };
+                DoctorEntry.COLUMN_DOCTOR_EMAIL};
 
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context
-                DoctorEntry.CONTENT_URI,   // Provider content URI to query
+                mSelectDoctorUri,   // Provider content URI to query
                 projection,             // Columns to include in the resulting Cursor
                 null,                   // No selection clause
                 null,                   // No selection arguments
@@ -77,7 +89,18 @@ public class DoctorListActivity extends AppCompatActivity implements LoaderManag
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mCursorAdapter.swapCursor(data);
+
+        if (mSelectDoctorUri != DoctorEntry.CONTENT_URI) {
+            int phoneColumnIndex = data.getColumnIndex(DoctorEntry.COLUMN_DOCTOR_PHONE);
+            String doctorPhone = data.getString(phoneColumnIndex);
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", doctorPhone, null));
+            startActivity(intent);
+
+        }
+
     }
+
+
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {

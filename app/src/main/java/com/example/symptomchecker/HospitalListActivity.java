@@ -12,18 +12,28 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.symptomchecker.data.DoctorContract;
 import com.example.symptomchecker.data.HospitalContract.HospitalEntry;
 
 
-public class HospitalListActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<Cursor> {
+public class HospitalListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    /** Identifier for the hospital data loader */
+    /**
+     * Identifier for the hospital data loader
+     */
     private static final int HOSPITAL_LOADER = 0;
+    private static final int HOSPITAL_LOADER_EXIST = 1;
 
-    /** Adapter for the ListView */
+    /**
+     * Adapter for the ListView
+     */
     HospitalCursorAdapter mCursorAdapter;
+
+    private Uri mSelectHospitalUri = HospitalEntry.CONTENT_URI;
+    HospitalCursorAdapter mHospitalCursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +52,9 @@ public class HospitalListActivity extends AppCompatActivity  implements LoaderMa
         hospitalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                mSelectHospitalUri = ContentUris.withAppendedId(HospitalEntry.CONTENT_URI, id);
 
+                getLoaderManager().initLoader(HOSPITAL_LOADER_EXIST, null, HospitalListActivity.this);
             }
         });
 
@@ -63,7 +75,7 @@ public class HospitalListActivity extends AppCompatActivity  implements LoaderMa
 
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context
-                HospitalEntry.CONTENT_URI,   // Provider content URI to query
+                mSelectHospitalUri,   // Provider content URI to query
                 projection,             // Columns to include in the resulting Cursor
                 null,                   // No selection clause
                 null,                   // No selection arguments
@@ -71,9 +83,22 @@ public class HospitalListActivity extends AppCompatActivity  implements LoaderMa
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        mCursorAdapter.swapCursor(data);
 
-        mCursorAdapter.swapCursor(cursor);
+        if (mSelectHospitalUri != HospitalEntry.CONTENT_URI) {
+            int addressColumnIndex = data.getColumnIndex(HospitalEntry.COLUMN_HOSPITAL_ADDRESS);
+            String hospitalAddress = data.getString(addressColumnIndex);
+
+            Uri gmmIntentUri = Uri.parse("geo:0,0?q="+hospitalAddress+", краснодар");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+
+
+        }
+
+
     }
 
     @Override
