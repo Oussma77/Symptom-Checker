@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
+
         <activity
             android:name=".MainQuizIllness"
             android:exported="false"
@@ -91,6 +92,7 @@
             android:exported="false"
             android:label="Login"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -122,6 +124,7 @@
             android:name=".data.IllnessProvider"
             android:authorities="com.example.android.symptomchecker.data.IllnessProvider"
             android:exported="false" />
+
     </application>
 
 </manifest>

@@ -8,7 +8,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     Button nextQuiz;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
