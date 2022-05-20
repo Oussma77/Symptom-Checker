@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,6 +63,87 @@
 
 
         </RelativeLayout>
+
+    </LinearLayout>
+
+<!--        Resultat -->
+    <LinearLayout
+        android:id="@+id/linearResultsIllness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Советы и рекомендации по этому заболеванию : "
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <ListView
+            android:id="@+id/list_result_illness"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <!--            Список врачей в вашем районе-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Список врачей в вашем районе"
+            android:textColor="@color/MainImg1"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/img_btn_list_doctors1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:scaleType="centerInside"
+            android:src="@drawable/doctors1" />
+
+        <!--            Список больниц в вашем районе-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Список больниц в вашем районе"
+            android:textColor="@color/MainImg1"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/img_btn_list_hospitals1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:src="@drawable/hospital" />
+
+        <!--            Список аптек в вашем районе-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Список аптек в вашем районе"
+            android:textColor="@color/MainImg1"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/img_btn_list_pharmacy1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:scaleType="centerInside"
+            android:src="@drawable/pahrmacy1" />
+        <!--            in the and-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/Result_about_end"
+            android:textSize="11dp" />
 
     </LinearLayout>
 

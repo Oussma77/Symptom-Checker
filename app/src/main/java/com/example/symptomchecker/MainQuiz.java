@@ -255,7 +255,7 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
         resultSymptomListView.setAdapter(mSymptomCursorAdapter);
 
 
-//       Список врачей в вашем районе
+        //       Список врачей в вашем районе
         ImageButton imageButtonDoctor = findViewById(R.id.img_btn_list_doctors);
         imageButtonDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
