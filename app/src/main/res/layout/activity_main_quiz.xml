@@ -14,13 +14,13 @@
         android:padding="16dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="36dp"
             android:text="вопрос к пациенту (минутку)"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="36dp"/>
+            android:textStyle="bold" />
 
         <!--        select illness or symptom-->
         <LinearLayout
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="56dp"
-                android:text="Next" />
+                android:text="Далее" />
 
         </LinearLayout>
         <!--    linearForWho    02-->
@@ -80,7 +80,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Who is the checkup for?"
+                android:text="Для кого это обследование?"
                 android:textSize="26dp" />
 
             <RadioGroup
@@ -94,14 +94,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Myself"
+                    android:text="Я лично"
                     android:textSize="16dp" />
 
                 <RadioButton
                     android:id="@+id/radio_someone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Someone else"
+                    android:text="Кто-либо другой"
                     android:textSize="16dp" />
 
             </RadioGroup>
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="56dp"
-                android:text="Next" />
+                android:text="Далее" />
 
         </LinearLayout>
 
@@ -127,7 +127,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="What is your sex?"
+                android:text="Укажите свой пол?"
                 android:textSize="26dp" />
 
             <RadioGroup
@@ -141,14 +141,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Male"
+                    android:text="Мужчина"
                     android:textSize="16dp" />
 
                 <RadioButton
                     android:id="@+id/radio_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Female"
+                    android:text="Женщина"
                     android:textSize="16dp" />
 
             </RadioGroup>
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="56dp"
-                android:text="Next" />
+                android:text="Далее" />
 
         </LinearLayout>
 
@@ -174,15 +174,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How old are you?"
+                android:text="Сколько Вам лет?"
                 android:textSize="26dp" />
 
 
             <EditText
                 android:id="@+id/EditTextAge"
-                android:layout_width="100dp"
+                android:layout_width="350dp"
+                android:maxLength="2"
                 android:layout_height="match_parent"
-                android:hint="Age"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:hint="Возраст"
                 android:inputType="number" />
 
 
@@ -192,11 +195,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="56dp"
-                android:text="Next" />
+                android:text="Далее" />
 
         </LinearLayout>
 
-        <!--        04-->
+        <!--    linearallstatements    04-->
 
         <LinearLayout
             android:id="@+id/linearallstatements"
@@ -209,17 +212,53 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please check all the statements below tha apply to you ."
+                android:text="Пожалуйста, проверьте все приведенные ниже утверждения, которые относятся к вам ."
                 android:textColor="@color/black"
-                android:textSize="26dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="select one answer in each row." />
+                android:text="выберите один ответ в каждой строке." />
 
+            <!--            temperature-->
+            <RadioGroup
+                android:id="@+id/radioGroupTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="у меня высокая температура" />
+
+                <RadioButton
+                    android:id="@+id/radio_Temperatureyes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Да"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Temperatureno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Нет"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_Temperaturedont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не знаю"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
 
             <RadioGroup
                 android:id="@+id/radioGroupOverweight"
@@ -231,7 +270,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="i'm overweight or obese" />
+                    android:text="у меня избыточный вес или ожирение" />
 
                 <RadioButton
                     android:id="@+id/radio_overweightyes"
@@ -268,7 +307,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="I smoke Cigarettes" />
+                    android:text="я курю сигареты" />
 
                 <RadioButton
                     android:id="@+id/radio_Cigarettesyes"
@@ -306,7 +345,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="I hva high Cholesterol" />
+                    android:text="у меня холестерин" />
 
                 <RadioButton
                     android:id="@+id/radio_Cholesterolyes"
@@ -344,7 +383,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="I have high Hypertension" />
+                    android:text="У меня высокая гипертония" />
 
                 <RadioButton
                     android:id="@+id/radio_Hypertensionyes"
@@ -381,7 +420,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="I have Diabetes" />
+                    android:text="у меня диабет" />
 
                 <RadioButton
                     android:id="@+id/radio_Diabetesyes"
@@ -415,7 +454,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="56dp"
-                android:text="Next" />
+                android:text="Далее" />
 
         </LinearLayout>
 

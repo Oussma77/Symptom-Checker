@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -57,45 +58,157 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
     MainQuizOneIllnessCursorAdapter mOneIllnessCursorAdapter;
 
     //-**********************************************end
+    //type
+    LinearLayout linearType;
+    Button buttonType;
+    RadioGroup radioGrouptype;
+    RadioButton radioButtonType;
+    String Type = "";
 
+    //for who
+    LinearLayout linearForWho;
+    Button buttonForWho;
     RadioGroup radioGroupForWho;
     RadioButton radioButtonForWho;
-    RadioButton radioButtonsemoene;
-
     String ForWhow = "";
 
-    LinearLayout linearLayoutForWho;
-    LinearLayout linearLayout2;
-    LinearLayout linearSelectSymptomp;
+    //Sex
+    LinearLayout linearsex;
+    Button buttonSex;
+    RadioGroup radioGroupSex;
+    RadioButton radioButtonSex;
+    String sex = "";
+
+    //Age
+    LinearLayout linearAge;
+    Button buttonAge;
+    EditText editTextAge;
+    String Age = "";
+
+    //select symptom
     LinearLayout linearResult;
 
-    Button buttonForWho;
-    Button b2;
+    //allstatements
+    LinearLayout linearAllstatements;
+
+
+    RadioGroup radioGroupTemperature;
+    RadioButton radioButtonTemperature;
+    String Temperature = "";
+
+    RadioGroup radioGroupOverweight;
+    RadioButton radioButtonOverweight;
+    String Overweight = "";
+
+
+    RadioGroup radioGroupCigarettes;
+    RadioButton radioButtonCigarettes;
+    String Cigarettes = "";
+
+    RadioGroup radioGroupCholesterol;
+    RadioButton radioButtonCholesterol;
+    String Cholesterol = "";
+
+    RadioGroup radioGroupHypertension;
+    RadioButton radioButtonHypertension;
+    String Hypertension = "";
+
+    RadioGroup radioGroupDiabetes;
+    RadioButton radioButtonDiabetes;
+    String Diabetes = "";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_quiz);
 
+        linearType = (LinearLayout) findViewById(R.id.linearSelect_illness_or_symptoms);
+        linearForWho = (LinearLayout) findViewById(R.id.linearForWho);
+        linearsex = (LinearLayout) findViewById(R.id.linearsex);
+        linearAge = (LinearLayout) findViewById(R.id.linearAge);
         linearResult = (LinearLayout) findViewById(R.id.linearResults);
-        linearSelectSymptomp = (LinearLayout) findViewById(R.id.linearAddSymptoms);
+        linearAllstatements = (LinearLayout) findViewById(R.id.linearAddSymptoms);
 
 
-        linearLayoutForWho = (LinearLayout) findViewById(R.id.linearForWho);
-//        linearLayoutForWho.setVisibility(View.VISIBLE);
+        //first select type
+        linearType.setVisibility(View.VISIBLE);
+
+        radioGrouptype = (RadioGroup) findViewById(R.id.radioGrouptype);
+        buttonType = (Button) findViewById(R.id.buttonType);
+
+        buttonType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int radioId = radioGrouptype.getCheckedRadioButtonId();
+                radioButtonType = findViewById(radioId);
+                Type = radioButtonType.getText().toString().trim();
+
+                if (Type.equalsIgnoreCase("по симптомам")) {
+                    linearType.setVisibility(View.GONE);
+                    linearForWho.setVisibility(View.VISIBLE);
+                } else {
+                    Intent numbersIntent = new Intent(MainQuiz.this, MainQuizIllness.class);
+                    startActivity(numbersIntent);
+                }
+
+            }
+        });
+
+
+
+
+        //   for who
         radioGroupForWho = findViewById(R.id.radioGroupForWho);
         buttonForWho = (Button) findViewById(R.id.buttonForWho);
 
         buttonForWho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linearLayoutForWho.setVisibility(View.GONE);
-                //linearLayout2.setVisibility(View.VISIBLE);
 
                 int radioId = radioGroupForWho.getCheckedRadioButtonId();
                 radioButtonForWho = findViewById(radioId);
                 ForWhow = radioButtonForWho.getText().toString().trim();
-                Log.v("MainQuiz1", "Radio = " + ForWhow);
+
+                linearForWho.setVisibility(View.GONE);
+                linearsex.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+
+        //   Sex
+        radioGroupSex = findViewById(R.id.radioGroupsex);
+        buttonSex = (Button) findViewById(R.id.buttonsex);
+
+        buttonSex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int radioId = radioGroupSex.getCheckedRadioButtonId();
+                radioButtonSex = findViewById(radioId);
+                sex = radioButtonSex.getText().toString().trim();
+
+                linearsex.setVisibility(View.GONE);
+                linearAge.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //   Age
+        editTextAge = findViewById(R.id.EditTextAge);
+        buttonAge = (Button) findViewById(R.id.buttonAge);
+
+        buttonAge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Age = buttonAge.getText().toString().trim();
+
+                linearAge.setVisibility(View.GONE);
+                linearAllstatements.setVisibility(View.VISIBLE);
 
             }
         });
@@ -116,11 +229,10 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
                 mSelectSymptomUri = ContentUris.withAppendedId(SymptomEntry.CONTENT_URI, id);
 
                 getLoaderManager().initLoader(LOADER_EXIST, null, MainQuiz.this);
-                linearSelectSymptomp.setVisibility(View.GONE);
+                linearAllstatements.setVisibility(View.GONE);
                 linearResult.setVisibility(View.VISIBLE);
             }
         });
-
 
 
         //result // Find the ListView which will be populated with the Pharmacy data
@@ -179,12 +291,12 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
                 SymptomEntry.COLUMN_SYMPTOM_REASONS,
         };
         // This loader will execute the ContentProvider's query method on a background thread
-            return new CursorLoader(this,   // Parent activity context
-                    mSelectSymptomUri,   // Provider content URI to query
-                    projection,             // Columns to include in the resulting Cursor
-                    null,                   // No selection clause
-                    null,                   // No selection arguments
-                    null);
+        return new CursorLoader(this,   // Parent activity context
+                mSelectSymptomUri,   // Provider content URI to query
+                projection,             // Columns to include in the resulting Cursor
+                null,                   // No selection clause
+                null,                   // No selection arguments
+                null);
 
 
     }

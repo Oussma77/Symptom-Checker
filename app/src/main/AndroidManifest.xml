@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SymptomChecker">
         <activity
+            android:name=".MainQuizIllness"
+            android:exported="false"
+            android:parentActivityName=".MainQuiz"/>
+        <activity
             android:name=".PharmacyListActivity"
             android:exported="false" />
         <activity
@@ -22,10 +26,11 @@
             android:exported="false" />
         <activity
             android:name=".DoctorListActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainQuiz"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".IllnessEditorActivity"
             android:exported="false"
