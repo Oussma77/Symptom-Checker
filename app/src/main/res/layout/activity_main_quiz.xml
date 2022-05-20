@@ -21,6 +21,52 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <!--        select illness or symptom-->
+        <LinearLayout
+            android:id="@+id/linearSelect_illness_or_symptoms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Распознайте тип заболевания по:"
+                android:textSize="22dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGrouptype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="36dp">
+
+                <RadioButton
+                    android:id="@+id/radio_symptom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="по симптомам"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radio_illness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Я знаю тип болезни"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/buttonType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:text="Next" />
+
+        </LinearLayout>
         <!--    linearForWho    02-->
 
         <LinearLayout
@@ -429,7 +475,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
