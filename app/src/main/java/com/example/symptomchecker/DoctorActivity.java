@@ -155,7 +155,7 @@ public class DoctorActivity extends AppCompatActivity implements LoaderManager.L
         ContentValues values2 = new ContentValues();
         values2.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Устинова Татьяна Александровна");
         values2.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
-        values2.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 20-50-830");
+        values2.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 20-50-83");
         values2.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Выгонная, д. 20");
         values2.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "tatana52@mail.ru");
         Uri newUri2 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values2);
@@ -164,7 +164,7 @@ public class DoctorActivity extends AppCompatActivity implements LoaderManager.L
         ContentValues values3 = new ContentValues();
         values3.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Абгарян Гаяне Ильинична");
         values3.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
-        values3.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961  201-84-91");
+        values3.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-84-91");
         values3.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Ставропольская, д. 178");
         values3.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "anna_mukaulov@mail.ru");
         Uri newUri3 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values3);
@@ -227,7 +227,7 @@ public class DoctorActivity extends AppCompatActivity implements LoaderManager.L
         ContentValues values10 = new ContentValues();
         values10.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Лобач Ольга Игоревна");
         values10.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
-        values10.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-77-91");
+        values10.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-84-91");
         values10.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "пр-кт К. Образцова, д. 27/1");
         values10.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "olgakaa45@mail.ru");
         Uri newUri10 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values10);

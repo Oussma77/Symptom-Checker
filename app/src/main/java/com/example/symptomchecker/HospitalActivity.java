@@ -133,13 +133,65 @@ public class HospitalActivity extends AppCompatActivity  implements LoaderManage
     }
 
     private void insertHospital() {
+
+        //list hospital 01
         ContentValues values = new ContentValues();
-        values.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "HOSPITAL KRASNODAR N07");
+        values.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "Центр грудной хирургии");
         values.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 22:00");
         values.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+79875554132");
-        values.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул Красная, 29");
-
+        values.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. Российская, 140");
         Uri newUri = getContentResolver().insert(HospitalEntry.CONTENT_URI, values);
+
+        //list hospital 02
+        ContentValues values1 = new ContentValues();
+        values1.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "Краевая больница №1 им");
+        values1.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 22:00");
+        values1.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+7(861) 252-73-41");
+        values1.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. 1 Мая, д. 167");
+        Uri newUri1 = getContentResolver().insert(HospitalEntry.CONTENT_URI, values1);
+
+        //list hospital 03
+        ContentValues values2 = new ContentValues();
+        values2.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "Инфекционная больница");
+        values2.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 18:00");
+        values2.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+79875554132");
+        values2.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. Седина, 204");
+        Uri newUri2 = getContentResolver().insert(HospitalEntry.CONTENT_URI, values2);
+
+        //list hospital 04
+        ContentValues values4 = new ContentValues();
+        values4.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "Городская больница №3 (ХБК)");
+        values4.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 22:00");
+        values4.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+79875554132");
+        values4.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. Айвазовского, д. 97");
+        Uri newUri4 = getContentResolver().insert(HospitalEntry.CONTENT_URI, values4);
+
+        //list hospital 05
+        ContentValues values5 = new ContentValues();
+        values5.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "ЛОР центр на Захарова");
+        values5.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 22:00");
+        values5.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+79875554132");
+        values5.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. Захарова, 59");
+        Uri newUri5 = getContentResolver().insert(HospitalEntry.CONTENT_URI, values5);
+
+        //list hospital 06
+        ContentValues values6 = new ContentValues();
+        values6.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "Городская больница №1");
+        values6.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 22:00");
+        values6.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+79875554132");
+        values6.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. Красная, 103");
+        Uri newUri6 = getContentResolver().insert(HospitalEntry.CONTENT_URI, values6);
+
+
+        //list hospital 07
+        ContentValues values7 = new ContentValues();
+        values7.put(HospitalEntry.COLUMN_HOSPITAL_NAME, "Центр СПИД");
+        values7.put(HospitalEntry.COLUMN_HOSPITAL_WORKTIME, "08:00 - 22:00");
+        values7.put(HospitalEntry.COLUMN_HOSPITAL_PHONE, "+79875554132");
+        values7.put(HospitalEntry.COLUMN_HOSPITAL_ADDRESS, "ул. им. Митрофана Седина, д. 204");
+        Uri newUri7 = getContentResolver().insert(HospitalEntry.CONTENT_URI, values7);
+
+
     }
 
     private void deleteAllHospitals() {
