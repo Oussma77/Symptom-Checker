@@ -139,17 +139,100 @@ public class DoctorActivity extends AppCompatActivity implements LoaderManager.L
         // Create a ContentValues object where column names are the keys,
         // and name's doctor attributes are the values.
         ContentValues values = new ContentValues();
-        values.put(DoctorEntry.COLUMN_DOCTOR_NAME, "D.IVAN ZEKOVITCHE");
-        values.put(DoctorEntry.COLUMN_DOCTOR_AGE, 34);
-        values.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+79875554132");
-        values.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул Красная, 14");
-        values.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "oussama@gmail.com");
+        values.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Кудряшева Анна Михайловна");
+        values.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-84-91");
+        values.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. им. 70 лет Октября, д. 1");
+        values.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "anna_mukaulov@mail.ru");
 
         // Insert a new row for Toto into the provider using the ContentResolver.
         // Use the {@link doctorEntry#CONTENT_URI} to indicate that we want to insert
         // into the doctors database table.
         // Receive the new content URI that will allow us to access Toto's data in the future.
         Uri newUri = getContentResolver().insert(DoctorEntry.CONTENT_URI, values);
+
+        //New doctors 2
+        ContentValues values2 = new ContentValues();
+        values2.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Устинова Татьяна Александровна");
+        values2.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values2.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 20-50-830");
+        values2.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Выгонная, д. 20");
+        values2.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "tatana52@mail.ru");
+        Uri newUri2 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values2);
+
+        //New doctors 3
+        ContentValues values3 = new ContentValues();
+        values3.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Абгарян Гаяне Ильинична");
+        values3.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values3.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961  201-84-91");
+        values3.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Ставропольская, д. 178");
+        values3.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "anna_mukaulov@mail.ru");
+        Uri newUri3 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values3);
+
+        //New doctors 4
+        ContentValues values4 = new ContentValues();
+        values4.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Адамян Наири Камоевич");
+        values4.put(DoctorEntry.COLUMN_DOCTOR_AGE, 44);
+        values4.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-84-73");
+        values4.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Гагарина, д. 124");
+        values4.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "naurui564@mail.ru");
+        Uri newUri4 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values4);
+
+        //New doctors 5
+        ContentValues values5 = new ContentValues();
+        values5.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Какуша Михаил Леонидович");
+        values5.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values5.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 202-58-05");
+        values5.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Коммунаров, д. 270");
+        values5.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "miacha4518@mail.ru");
+        Uri newUri5 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values5);
+
+        //New doctors 6
+        ContentValues values6 = new ContentValues();
+        values6.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Шавкун Ирина Викторовна");
+        values6.put(DoctorEntry.COLUMN_DOCTOR_AGE, 55);
+        values6.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 20-50-830");
+        values6.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Выгонная, д. 20");
+        values6.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "anna_mukaulov@mail.ru");
+        Uri newUri6 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values6);
+
+        //New doctors 7
+        ContentValues values7 = new ContentValues();
+        values7.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Миценко Инна Владимировна");
+        values7.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values7.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 206-26-08");
+        values7.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Тюляева, д. 4/1");
+        values7.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "inna548@mail.ru");
+        Uri newUri7 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values7);
+
+        //New doctors 8
+        ContentValues values8 = new ContentValues();
+        values8.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Липатова Анна Геннадьевна");
+        values8.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values8.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-87-55");
+        values8.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Гагарина, д. 124");
+        values8.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "anna_mukaulov@mail.ru");
+        Uri newUri8 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values8);
+
+        //New doctors 9
+        ContentValues values9 = new ContentValues();
+        values9.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Косьяненко Светлана Сергеевна");
+        values9.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values9.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 585-22-91");
+        values9.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "ул. Гагарина, д. 124");
+        values9.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "cvitlana4@mail.ru");
+        Uri newUri9 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values9);
+
+        //New doctors 10
+        ContentValues values10 = new ContentValues();
+        values10.put(DoctorEntry.COLUMN_DOCTOR_NAME, "Лобач Ольга Игоревна");
+        values10.put(DoctorEntry.COLUMN_DOCTOR_AGE, 38);
+        values10.put(DoctorEntry.COLUMN_DOCTOR_PHONE, "+7 961 201-77-91");
+        values10.put(DoctorEntry.COLUMN_DOCTOR_ADDRESS, "пр-кт К. Образцова, д. 27/1");
+        values10.put(DoctorEntry.COLUMN_DOCTOR_EMAIL, "olgakaa45@mail.ru");
+        Uri newUri10 = getContentResolver().insert(DoctorEntry.CONTENT_URI, values10);
+
+
     }
 
     private void deleteAllDoctors() {
