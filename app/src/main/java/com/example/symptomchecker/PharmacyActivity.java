@@ -132,12 +132,60 @@ public class PharmacyActivity extends AppCompatActivity implements LoaderManager
 
     private void insertPharmacy() {
         ContentValues values = new ContentValues();
-        values.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Pharmacy  N07");
+        values.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Дешёвая аптека");
         values.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
-        values.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "+7987555413");
-        values.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул Красная, 79");
-
+        values.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "88612900722");
+        values.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул. 40-летия Победы, 33/1");
         Uri newUri = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values);
+
+        //list pharmacy 02
+        ContentValues values1 = new ContentValues();
+        values1.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Аптека 112");
+        values1.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
+        values1.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "88612526555");
+        values1.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул. 40-летия Победы, 108");
+        Uri newUri1 = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values1);
+
+        //list pharmacy 03
+        ContentValues values3 = new ContentValues();
+        values3.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Аптеки Кубани, № 6");
+        values3.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
+        values3.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "+7987555413");
+        values3.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул. Рашпилевская, 183");
+        Uri newUri3 = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values3);
+
+        //list pharmacy 04
+        ContentValues values4 = new ContentValues();
+        values4.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Аптека ВИТА ЦЕНТРАЛЬНАЯ");
+        values4.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
+        values4.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "+7987555413");
+        values4.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "Краснодар улица имени, ул. 40-летия Победы, 144/4");
+        Uri newUri4 = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values4);
+
+        //list pharmacy 05
+        ContentValues values5 = new ContentValues();
+        values5.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Моя Аптека, Сеть Аптек");
+        values5.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
+        values5.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "88612527697");
+        values5.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул. Ипподромная, 53");
+        Uri newUri5 = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values5);
+
+        //list pharmacy 06
+        ContentValues values6 = new ContentValues();
+        values6.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Аптеки Кубани, № 13");
+        values6.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
+        values6.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "88612040352");
+        values6.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул. Офицерская, 43");
+        Uri newUri6 = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values6);
+
+        //list pharmacy 07
+        ContentValues values7 = new ContentValues();
+        values7.put(PharmacyEntry.COLUMN_PHARMACYS_NAME, "Аптеки Кубани, №505");
+        values7.put(PharmacyEntry.COLUMN_PHARMACYS_WORKTIME, "08:00 - 20:00");
+        values7.put(PharmacyEntry.COLUMN_PHARMACYS_PHONE, "88612330980");
+        values7.put(PharmacyEntry.COLUMN_PHARMACYS_ADDRESS, "ул. Селезнева, 76");
+        Uri newUri7 = getContentResolver().insert(PharmacyEntry.CONTENT_URI, values7);
+
     }
 
     private void deleteAllPharmacys() {
