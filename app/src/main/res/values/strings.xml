@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Проверка Симптомов</string>
+    <string name="app_name">Функциональная диагностика</string>
 
     <string name="menu_open">Open</string>
     <string name="menu_close">Close</string>

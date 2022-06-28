@@ -135,7 +135,35 @@ public class SymptomActivity extends AppCompatActivity implements LoaderManager.
     }
 
     private void insertSymptom() {
-        
+
+        //list symptom 08
+        ContentValues values8 = new ContentValues();
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_NAME, "Запор");
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_DESCRIPTION, "Запор — это комплекс симптомов, характеризующийся уменьшением частоты актов дефекации, изменением консистенции каловых масс (твердый, фрагментированный кал), чувством неполного опорожнения кишечника, а также необходимостью в избыточном натуживании для совершения акта дефекации ");
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_NEEDHELP, "Экстренная помощь не требуется ");
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_CLASIFICATION, "•\tПервичные запоры (врождённые или приобретённые аномалии толстой кишки).\n" +
+                "•\tВторичные запоры (развиваются в результате заболевания, травмы).\n" +
+                "•\tИдиопатические запоры (нарушение моторики кишечника без установленной причины)\n ");
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_ISRECOMMENDED, "•\tВести активный образ жизни.\n" +
+                "•\tУвеличить объем потребляемой жидкости до 1,5-2 литров в день.\n" +
+                "•\tНе пропускать приёмы пищи.\n" +
+                "•\tЕсть продукты, богатые клетчаткой (овощи и фрукты, крупы).\n ");
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_ISNOTRECOMMENDED, "•\tОграничивать приём жидкости и пищи.\n" +
+                "•\tПринимать слабительные препараты без назначения врача.\n ");
+        values8.put(SymptomEntry.COLUMN_SYMPTOM_REASONS, "•\tНеспецифические воспалительные заболевания кишечника.\n" +
+                "•\tПервичный билиарный холангит.\n" +
+                "•\tСиндром раздраженного кишечника.\n" +
+                "•\tНовообразование толстой кишки.\n" +
+                "•\tГеморрой.\n" +
+                "•\tКишечная непроходимость.\n" +
+                "•\tОстрый панкреатит.\n" +
+                "•\tХронический холецистит.\n" +
+                "•\tКишечная инфекция.\n" +
+                "•\tХронический панкреатит.\n" +
+                "•\tЦелиакия.\n" +
+                "•\tГипотиреоз.\n ");
+        Uri newUri8 = getContentResolver().insert(SymptomEntry.CONTENT_URI, values8);
+
         //list symptom 02
         ContentValues values2 = new ContentValues();
         values2.put(SymptomEntry.COLUMN_SYMPTOM_NAME, "Боль в грудной клетке");
@@ -312,33 +340,7 @@ public class SymptomActivity extends AppCompatActivity implements LoaderManager.
                 "•\tГипокортицизм.\n ");
         Uri newUri7 = getContentResolver().insert(SymptomEntry.CONTENT_URI, values7);
 
-        //list symptom 08
-        ContentValues values8 = new ContentValues();
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_NAME, "Запор");
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_DESCRIPTION, "Запор — это комплекс симптомов, характеризующийся уменьшением частоты актов дефекации, изменением консистенции каловых масс (твердый, фрагментированный кал), чувством неполного опорожнения кишечника, а также необходимостью в избыточном натуживании для совершения акта дефекации ");
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_NEEDHELP, "Экстренная помощь не требуется ");
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_CLASIFICATION, "•\tПервичные запоры (врождённые или приобретённые аномалии толстой кишки).\n" +
-                "•\tВторичные запоры (развиваются в результате заболевания, травмы).\n" +
-                "•\tИдиопатические запоры (нарушение моторики кишечника без установленной причины)\n ");
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_ISRECOMMENDED, "•\tВести активный образ жизни.\n" +
-                "•\tУвеличить объем потребляемой жидкости до 1,5-2 литров в день.\n" +
-                "•\tНе пропускать приёмы пищи.\n" +
-                "•\tЕсть продукты, богатые клетчаткой (овощи и фрукты, крупы).\n ");
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_ISNOTRECOMMENDED, "•\tОграничивать приём жидкости и пищи.\n" +
-                "•\tПринимать слабительные препараты без назначения врача.\n ");
-        values8.put(SymptomEntry.COLUMN_SYMPTOM_REASONS, "•\tНеспецифические воспалительные заболевания кишечника.\n" +
-                "•\tПервичный билиарный холангит.\n" +
-                "•\tСиндром раздраженного кишечника.\n" +
-                "•\tНовообразование толстой кишки.\n" +
-                "•\tГеморрой.\n" +
-                "•\tКишечная непроходимость.\n" +
-                "•\tОстрый панкреатит.\n" +
-                "•\tХронический холецистит.\n" +
-                "•\tКишечная инфекция.\n" +
-                "•\tХронический панкреатит.\n" +
-                "•\tЦелиакия.\n" +
-                "•\tГипотиреоз.\n ");
-        Uri newUri8 = getContentResolver().insert(SymptomEntry.CONTENT_URI, values8);
+
 
         //list symptom 09
         ContentValues values9 = new ContentValues();

@@ -89,8 +89,17 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
     //select symptom
     LinearLayout linearResult;
 
+    Button buttonRadio1;
+    Button buttonRadio2;
+    Button buttonRadio3;
+    Button buttonRadio4;
+    Button buttonRadio5;
+    Button buttonRadio6;
+
     //allstatements
     LinearLayout linearAllstatements;
+    Button buttonAllstatements;
+    LinearLayout linearAddSymptoms;;
 
 
     RadioGroup radioGroupTemperature;
@@ -131,7 +140,10 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
         linearsex = (LinearLayout) findViewById(R.id.linearsex);
         linearAge = (LinearLayout) findViewById(R.id.linearAge);
         linearResult = (LinearLayout) findViewById(R.id.linearResults);
-        linearAllstatements = (LinearLayout) findViewById(R.id.linearAddSymptoms);
+        linearAllstatements = (LinearLayout) findViewById(R.id.linearallstatements);
+        linearAddSymptoms = (LinearLayout) findViewById(R.id.linearAddSymptoms);
+
+       // linearallstatements
 
 
         //first select type
@@ -147,12 +159,13 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
                 radioButtonType = findViewById(radioId);
                 Type = radioButtonType.getText().toString().trim();
 
-                if (Type.equalsIgnoreCase("по симптомам")) {
-                    linearType.setVisibility(View.GONE);
-                    linearForWho.setVisibility(View.VISIBLE);
-                } else {
+                if (Type.equalsIgnoreCase("Я знаю тип болезни")) {
                     Intent numbersIntent = new Intent(MainQuiz.this, MainQuizIllness.class);
                     startActivity(numbersIntent);
+                } else {
+
+                    linearType.setVisibility(View.GONE);
+                    linearForWho.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -197,7 +210,8 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
 
             }
         });
-
+        // for list symptoms
+        final wLoadingDialog wLoadingDialog1 = new wLoadingDialog(MainQuiz.this);
         //   Age
         editTextAge = findViewById(R.id.EditTextAge);
         buttonAge = (Button) findViewById(R.id.buttonAge);
@@ -214,9 +228,97 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
             }
         });
 
+        //btns
+        radioGroupTemperature = (RadioGroup) findViewById(R.id.radioGroupTemperature);
+        radioGroupOverweight = (RadioGroup) findViewById(R.id.radioGroupOverweight);
+        radioGroupCigarettes = (RadioGroup) findViewById(R.id.radioGroupCigarettes);
+        radioGroupCholesterol = (RadioGroup) findViewById(R.id.radioGroupCholesterol);
+        radioGroupHypertension = (RadioGroup) findViewById(R.id.radioGroupHypertension);
+        radioGroupDiabetes = (RadioGroup) findViewById(R.id.radioGroupDiabetes);
 
-        // for list symptoms
-        final wLoadingDialog wLoadingDialog = new wLoadingDialog(MainQuiz.this);
+
+        //btn 01
+        buttonRadio1 = (Button) findViewById(R.id.buttonRadio1);
+
+        buttonRadio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radioGroupTemperature.setVisibility(View.GONE);
+                radioGroupOverweight.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //btn 02
+        buttonRadio2= (Button) findViewById(R.id.buttonRadio2);
+
+        buttonRadio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radioGroupOverweight.setVisibility(View.GONE);
+                radioGroupCigarettes.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //btn 03
+        buttonRadio3 = (Button) findViewById(R.id.buttonRadio3);
+
+        buttonRadio3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radioGroupCigarettes.setVisibility(View.GONE);
+                radioGroupCholesterol.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //btn 04
+        buttonRadio4 = (Button) findViewById(R.id.buttonRadio4);
+
+        buttonRadio4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radioGroupCholesterol.setVisibility(View.GONE);
+                radioGroupHypertension.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //btn 05
+        buttonRadio5 = (Button) findViewById(R.id.buttonRadio5);
+
+
+        buttonRadio5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radioGroupHypertension.setVisibility(View.GONE);
+                radioGroupDiabetes.setVisibility(View.VISIBLE);
+            }
+        });
+        //all statement
+
+
+        buttonAllstatements = (Button) findViewById(R.id.buttonAllStatements);
+        buttonAllstatements.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Age = buttonAge.getText().toString().trim();
+
+                wLoadingDialog1.startLoadingDialog();
+                Handler handler= new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        wLoadingDialog1.dismissDialog();
+                        linearAllstatements.setVisibility(View.GONE);
+                        linearResult.setVisibility(View.VISIBLE);
+                    }
+                },6000);
+
+
+
+            }
+        });
+
+
         // Find the ListView which will be populated with the hospital data
         ListView listViewOneSymptoms = (ListView) findViewById(R.id.list_search_Symptoms);
 
@@ -230,14 +332,14 @@ public class MainQuiz extends AppCompatActivity implements LoaderManager.LoaderC
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 mSelectSymptomUri = ContentUris.withAppendedId(SymptomEntry.CONTENT_URI, id);
 
-                wLoadingDialog.startLoadingDialog();
+                wLoadingDialog1.startLoadingDialog();
                 Handler handler= new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        wLoadingDialog.dismissDialog();
+                        wLoadingDialog1.dismissDialog();
                         linearAllstatements.setVisibility(View.GONE);
-                        linearResult.setVisibility(View.VISIBLE);
+                        linearAddSymptoms.setVisibility(View.VISIBLE);
                     }
                 },6000);
 

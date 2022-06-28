@@ -22,9 +22,10 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_gravity="center"
+            android:layout_marginTop="36dp"
             android:layout_marginBottom="36dp"
             android:src="@drawable/stethoscope" />
 
@@ -39,8 +40,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Распознайте тип заболевания по:"
-                android:textSize="22dp" />
+                android:layout_marginBottom="28dp"
+                android:text="Пожалуйста, ответьте на следующие вопросы"
+                android:textSize="16dp" />
 
             <RadioGroup
                 android:id="@+id/radioGrouptype"
@@ -53,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="по симптомам"
+                    android:text="Диагностируя свое заболевание"
                     android:textSize="16dp" />
 
                 <RadioButton
@@ -229,12 +231,16 @@
                 android:layout_marginBottom="20dp"
                 android:text="выберите один ответ в каждой строке." />
 
+
             <!--            temperature-->
+
+
             <RadioGroup
                 android:id="@+id/radioGroupTemperature"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
+                android:paddingLeft="36dp"
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -264,13 +270,23 @@
                     android:text="Не знаю"
                     android:textSize="16dp" />
 
+                <Button
+                    android:id="@+id/buttonRadio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="56dp"
+                    android:text="Далее" />
+
             </RadioGroup>
+
 
             <RadioGroup
                 android:id="@+id/radioGroupOverweight"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
+                android:paddingLeft="36dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -300,14 +316,23 @@
                     android:text="Не знаю"
                     android:textSize="16dp" />
 
+                <Button
+                    android:id="@+id/buttonRadio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="56dp"
+                    android:text="Далее" />
+
             </RadioGroup>
 
             <!--            Cigarettes-->
             <RadioGroup
                 android:id="@+id/radioGroupCigarettes"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
+                android:paddingLeft="36dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -337,15 +362,24 @@
                     android:text="Не знаю"
                     android:textSize="16dp" />
 
+                <Button
+                    android:id="@+id/buttonRadio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="56dp"
+                    android:text="Далее" />
+
             </RadioGroup>
 
             <!--            Cholesterol-->
 
             <RadioGroup
                 android:id="@+id/radioGroupCholesterol"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
+                android:paddingLeft="36dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -375,15 +409,24 @@
                     android:text="Не знаю"
                     android:textSize="16dp" />
 
+                <Button
+                    android:id="@+id/buttonRadio4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="56dp"
+                    android:text="Далее" />
+
             </RadioGroup>
 
             <!--            hypertension-->
 
             <RadioGroup
                 android:id="@+id/radioGroupHypertension"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
+                android:paddingLeft="36dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -413,14 +456,23 @@
                     android:text="Не знаю"
                     android:textSize="16dp" />
 
+                <Button
+                    android:id="@+id/buttonRadio5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="56dp"
+                    android:text="Далее" />
+
             </RadioGroup>
 
             <!--            Diabetes-->
             <RadioGroup
                 android:id="@+id/radioGroupDiabetes"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="36dp">
+                android:paddingLeft="36dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -450,17 +502,19 @@
                     android:text="Не знаю"
                     android:textSize="16dp" />
 
+                <Button
+                    android:id="@+id/buttonAllStatements"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="56dp"
+                    android:text="Далее" />
+
             </RadioGroup>
 
 
             <!--            end -->
-            <Button
-                android:id="@+id/buttonAllStatements"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="56dp"
-                android:text="Далее" />
+
 
         </LinearLayout>
 
